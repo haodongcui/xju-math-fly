@@ -1,9 +1,8 @@
 # 新疆大学 数院 资料整合与共享
-该仓库存储本人的部分资料，不包含历年试题，更多资料可关注社团 `数学爱好者协会`
+该仓库存储本人的部分资料，不包含历年试题，更多数学专业课相关资料可加入社团 `数学爱好者协会`，数模资料可关注 `数模协会`
 
-后续计划发展为生存手册，加入学习规划等内容
+后续计划发展为飞跃手册，加入学习规划、保研考研等内容，欢迎各位同学前来联系我，共同完善该项目 (QQ: 2081823899)
 
-正在更新ing，欢迎 `star` & `fork` & `contribute`
 
 ## 声明
 > 受各大高校 [清华大学](https://github.com/PKUanonym/REKCARC-TSC-UHT)、[浙江大学](https://github.com/QSCTech/zju-icicles) 以及本校 [信院](https://github.com/Indolent-Kawhi/XJU-Computing-Heart/blob/master/README.md)、[软院](https://github.com/qichengxiaoqi/XJU-CollegeOfSoftware-Textbook) 课程共享计划etc. 启发，创建本项目。
@@ -15,5 +14,8 @@
 
 ## 注意
 - 下载方法：`Code` -> `Download ZIP`
-- Github仓库无法commit超过100M的文件
+- 如果要上传超过100M的文件，请使用 [Git LFS](https://git-lfs.com/)
 - 请勿上传任何违反中国法律法规的文件，包括但不限于：政治敏感、色情、暴力、反动等
+
+## 进度
+正在更新ing，欢迎 `star` & `fork` & `contribute`
