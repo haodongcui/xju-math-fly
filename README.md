@@ -3,6 +3,7 @@
 
 后续计划发展为飞跃手册，加入学习规划、保研考研等内容，欢迎各位同学前来联系我，共同完善该项目 (QQ: 2081823899)
 
+本项目源地址在 [Github仓库](https://github.com/haodongcui/xju-math-fly)，此外有仓库有 [Gitee镜像](https://gitee.com/haodongcui/xju-math-fly)
 
 ## 声明
 > 受各大高校 [清华大学](https://github.com/PKUanonym/REKCARC-TSC-UHT)、[浙江大学](https://github.com/QSCTech/zju-icicles) 以及本校 [信院](https://github.com/Indolent-Kawhi/XJU-Computing-Heart/blob/master/README.md)、[软院](https://github.com/qichengxiaoqi/XJU-CollegeOfSoftware-Textbook) 课程共享计划etc. 启发，创建本项目。
