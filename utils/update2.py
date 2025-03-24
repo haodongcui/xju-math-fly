@@ -46,13 +46,6 @@ def generate_index_html(folder_path, output_file, base_url=""):
                 else:
                     link = file_path.replace("\\", "/")  # 确保路径分隔符为 '/'
                 html_file.write(f'<li><a href="{link}" target="_blank">{file}</a></li>\n')
-                # 每个文件项添加预览和下载链接
-                html_file.write(
-                    f'<li>{file} '
-                    f'<a href="{link}" target="_blank">预览</a> '
-                    f'<a href="{link}" download>下载</a>'
-                    '</li>\n'
-                )
             html_file.write('</ul>\n')
 
         # 写入 HTML 文件的尾部
