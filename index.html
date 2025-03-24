@@ -1,110 +1,395 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>课程资料目录</title>
-<style>
-body { font-family: Arial, sans-serif; }
-h1 { color: #333; }
-ul { list-style-type: none; padding: 0; }
-li { margin: 5px 0; }
-</style>
+    <meta charset="UTF-8">
+    <title>课程资料目录 - 结构化视图</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --hover-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            margin: 2rem;
+            background: #f8f9fa;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5em;
+            margin-bottom: 1.5rem;
+        }
+
+        .tree {
+            padding-left: 1rem;
+        }
+
+        .folder {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .folder-title {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            cursor: pointer;
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .folder-title::before {
+            content: "📁";
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .file-list {
+            list-style: none;
+            padding-left: 2rem;
+            margin: 0.8rem 0;
+        }
+
+        .file-item {
+            margin: 0.5rem 0;
+            padding: 6px 12px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .file-name {
+            flex-grow: 1;
+            color: #444;
+            font-family: 'Consolas', monospace;
+        }
+
+        .action-link {
+            color: var(--secondary-color);
+            padding: 4px 8px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .action-link:hover {
+            color: var(--hover-color);
+            background: rgba(231, 76, 60, 0.1);
+            text-decoration: none;
+        }
+
+        .download::before {
+            content: "⬇️";
+            margin-right: 5px;
+        }
+
+        .preview::before {
+            content: "👁️";
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
-<h1>课程资料目录</h1>
-<ul>
-<li><strong>数值分析</strong></li>
-<ul>
-<li>数值分析 第五版[1-9章同步辅导含答案] 课后答案 (1).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/数值分析 第五版[1-9章同步辅导含答案] 课后答案 (1).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/数值分析 第五版[1-9章同步辅导含答案] 课后答案 (1).pdf" download>下载</a></li>
-<li>README.md <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/README.md" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/README.md" download>下载</a></li>
-<li>数值分析（扫描增强版） (李庆扬，王能超，易大义) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/数值分析（扫描增强版） (李庆扬，王能超，易大义) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/数值分析（扫描增强版） (李庆扬，王能超，易大义) (Z-Library).pdf" download>下载</a></li>
-</ul>
-<li><strong>近世代数</strong></li>
-<ul>
-<li>近世代数 (韩士安, 林磊) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/近世代数/近世代数 (韩士安, 林磊) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/近世代数/近世代数 (韩士安, 林磊) (Z-Library).pdf" download>下载</a></li>
-<li>近世代数习题解答 (韩士安 林磊) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/近世代数/近世代数习题解答 (韩士安 林磊) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/近世代数/近世代数习题解答 (韩士安 林磊) (Z-Library).pdf" download>下载</a></li>
-</ul>
-<li><strong>微分几何</strong></li>
-<ul>
-<li>微分几何 (彭家贵、陈卿) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/微分几何/微分几何 (彭家贵、陈卿) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/微分几何/微分几何 (彭家贵、陈卿) (Z-Library).pdf" download>下载</a></li>
-<li>README.md <a href="https://haodongcui.github.io/xju-math-fly/课程资料/微分几何/README.md" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/微分几何/README.md" download>下载</a></li>
-</ul>
-<li><strong>习近平中国特色社会主义思想概论</strong></li>
-<ul>
-<li>习思想B.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想B.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想B.pdf" download>下载</a></li>
-<li>习思想课本课后题.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想课本课后题.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想课本课后题.pdf" download>下载</a></li>
-<li>新思想速成课_202406262038_44488.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/新思想速成课_202406262038_44488.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/新思想速成课_202406262038_44488.pdf" download>下载</a></li>
-<li>习思想A.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想A.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想A.pdf" download>下载</a></li>
-<li>习概重点提纲.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习概重点提纲.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习概重点提纲.pdf" download>下载</a></li>
-</ul>
-<li><strong>实变函数</strong></li>
-<ul>
-<li>实变函数与泛函分析习题精解(郑维行_王声望).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/实变函数/实变函数与泛函分析习题精解(郑维行_王声望).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/实变函数/实变函数与泛函分析习题精解(郑维行_王声望).pdf" download>下载</a></li>
-</ul>
-<li><strong>概率论</strong></li>
-<ul>
-<li>概率论与数理统计教程( 第三版 )习题与解答 (茆诗松, 程依明, 濮晓龙) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论与数理统计教程( 第三版 )习题与解答 (茆诗松, 程依明, 濮晓龙) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论与数理统计教程( 第三版 )习题与解答 (茆诗松, 程依明, 濮晓龙) (Z-Library).pdf" download>下载</a></li>
-<li>README.md <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/README.md" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/README.md" download>下载</a></li>
-<li>概率论基础 第三版 (李贤平) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论基础 第三版 (李贤平) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论基础 第三版 (李贤平) (Z-Library).pdf" download>下载</a></li>
-<li>概率论 第2版 (杨振明编, 杨振明编, 杨振明) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论 第2版 (杨振明编, 杨振明编, 杨振明) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论 第2版 (杨振明编, 杨振明编, 杨振明) (Z-Library).pdf" download>下载</a></li>
-<li>概率论 (完整五章) 课后答案.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论 (完整五章) 课后答案.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论 (完整五章) 课后答案.pdf" download>下载</a></li>
-</ul>
-<li><strong>复变函数</strong></li>
-<ul>
-<li>复变答案余家荣第五版.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变答案余家荣第五版.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变答案余家荣第五版.pdf" download>下载</a></li>
-<li>README.md <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/README.md" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/README.md" download>下载</a></li>
-<li>复变函数-史济怀 (史济怀  刘太顺（向禹重排）) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变函数-史济怀 (史济怀  刘太顺（向禹重排）) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变函数-史济怀 (史济怀  刘太顺（向禹重排）) (Z-Library).pdf" download>下载</a></li>
-<li>简明复分析（第二版） (龚昇) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/简明复分析（第二版） (龚昇) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/简明复分析（第二版） (龚昇) (Z-Library).pdf" download>下载</a></li>
-<li>复变函数论 (钟玉泉) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变函数论 (钟玉泉) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变函数论 (钟玉泉) (Z-Library).pdf" download>下载</a></li>
-</ul>
-<li><strong>图论</strong></li>
-<ul>
-<li>图论及其应用 张先迪 课后答案[1-12章].pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/图论/图论及其应用 张先迪 课后答案[1-12章].pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/图论/图论及其应用 张先迪 课后答案[1-12章].pdf" download>下载</a></li>
-<li>图论及其应用 (张先迪，李正良主编 etc.) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/图论/图论及其应用 (张先迪，李正良主编 etc.) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/图论/图论及其应用 (张先迪，李正良主编 etc.) (Z-Library).pdf" download>下载</a></li>
-</ul>
-<li><strong>数学分析</strong></li>
-<ul>
-<li>README.md <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数学分析/README.md" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数学分析/README.md" download>下载</a></li>
-</ul>
-<li><strong>偏微分方程</strong></li>
-<ul>
-<li>答案：数学物理方程，谷超豪第四版.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/偏微分方程/答案：数学物理方程，谷超豪第四版.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/偏微分方程/答案：数学物理方程，谷超豪第四版.pdf" download>下载</a></li>
-<li>1数学物理方程 第三版 谷超豪 习题解答 齐海涛(1)_ (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/偏微分方程/1数学物理方程 第三版 谷超豪 习题解答 齐海涛(1)_ (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/偏微分方程/1数学物理方程 第三版 谷超豪 习题解答 齐海涛(1)_ (Z-Library).pdf" download>下载</a></li>
-</ul>
-<li><strong>其他</strong></li>
-<ul>
-<li>周志华-机器学习-9787302423287.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/周志华-机器学习-9787302423287.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/周志华-机器学习-9787302423287.pdf" download>下载</a></li>
-<li>Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville) (Z-Library).pdf" download>下载</a></li>
-<li>深度学习.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/深度学习.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/深度学习.pdf" download>下载</a></li>
-</ul>
-<li><strong>高等代数</strong></li>
-<ul>
-<li>README.md <a href="https://haodongcui.github.io/xju-math-fly/课程资料/高等代数/README.md" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/高等代数/README.md" download>下载</a></li>
-<li>高等代数 辅导与习题解答 （第五版） (北京大学数学系_ (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/高等代数/高等代数 辅导与习题解答 （第五版） (北京大学数学系_ (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/高等代数/高等代数 辅导与习题解答 （第五版） (北京大学数学系_ (Z-Library).pdf" download>下载</a></li>
-</ul>
-<li><strong>数理统计</strong></li>
-<ul>
-<li>概率论与数理统计 (陈希孺) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数理统计/概率论与数理统计 (陈希孺) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数理统计/概率论与数理统计 (陈希孺) (Z-Library).pdf" download>下载</a></li>
-</ul>
-<li><strong>大学物理</strong></li>
-<ul>
-<li>普通物理学【蜂考系统课】.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学【蜂考系统课】.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学【蜂考系统课】.pdf" download>下载</a></li>
-<li>普通物理学（下册）练习册答案1_20220909194654.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学（下册）练习册答案1_20220909194654.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学（下册）练习册答案1_20220909194654.pdf" download>下载</a></li>
-<li>普通物理学（上册）练习册答案.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学（上册）练习册答案.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学（上册）练习册答案.pdf" download>下载</a></li>
-</ul>
-<li><strong>点集拓扑</strong></li>
-<ul>
-<li>点集拓扑讲义, 第五版 (熊金城) (Z-Library).pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/点集拓扑/点集拓扑讲义, 第五版 (熊金城) (Z-Library).pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/点集拓扑/点集拓扑讲义, 第五版 (熊金城) (Z-Library).pdf" download>下载</a></li>
-</ul>
-<li><strong>LaTeX</strong></li>
-<ul>
-<li>Texstudio技巧与配置.pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/LaTeX/Texstudio技巧与配置.pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/LaTeX/Texstudio技巧与配置.pdf" download>下载</a></li>
-</ul>
-<li><strong>运筹学</strong></li>
-<ul>
-<li>运筹学基础及应用_第五版_胡运权_课后答案[1-8章].pdf <a href="https://haodongcui.github.io/xju-math-fly/课程资料/运筹学/运筹学基础及应用_第五版_胡运权_课后答案[1-8章].pdf" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/运筹学/运筹学基础及应用_第五版_胡运权_课后答案[1-8章].pdf" download>下载</a></li>
-<li>README.md <a href="https://haodongcui.github.io/xju-math-fly/课程资料/运筹学/README.md" target="_blank">预览</a> <a href="https://haodongcui.github.io/xju-math-fly/课程资料/运筹学/README.md" download>下载</a></li>
-</ul>
-</ul>
+    <h1>📂 课程资料目录结构</h1>
+    <div class="tree">
+<div class="folder">
+    <div class="folder-title">数值分析</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">数值分析 第五版[1-9章同步辅导含答案] 课后答案 (1).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/数值分析 第五版[1-9章同步辅导含答案] 课后答案 (1).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/数值分析 第五版[1-9章同步辅导含答案] 课后答案 (1).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">README.md</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/README.md" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/README.md" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">数值分析（扫描增强版） (李庆扬，王能超，易大义) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/数值分析（扫描增强版） (李庆扬，王能超，易大义) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数值分析/数值分析（扫描增强版） (李庆扬，王能超，易大义) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">近世代数</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">近世代数 (韩士安, 林磊) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/近世代数/近世代数 (韩士安, 林磊) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/近世代数/近世代数 (韩士安, 林磊) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">近世代数习题解答 (韩士安 林磊) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/近世代数/近世代数习题解答 (韩士安 林磊) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/近世代数/近世代数习题解答 (韩士安 林磊) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">微分几何</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">微分几何 (彭家贵、陈卿) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/微分几何/微分几何 (彭家贵、陈卿) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/微分几何/微分几何 (彭家贵、陈卿) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">README.md</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/微分几何/README.md" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/微分几何/README.md" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">习近平中国特色社会主义思想概论</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">习思想B.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想B.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想B.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">习思想课本课后题.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想课本课后题.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想课本课后题.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">新思想速成课_202406262038_44488.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/新思想速成课_202406262038_44488.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/新思想速成课_202406262038_44488.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">习思想A.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想A.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习思想A.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">习概重点提纲.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习概重点提纲.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/习近平中国特色社会主义思想概论/习概重点提纲.pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">实变函数</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">实变函数与泛函分析习题精解(郑维行_王声望).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/实变函数/实变函数与泛函分析习题精解(郑维行_王声望).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/实变函数/实变函数与泛函分析习题精解(郑维行_王声望).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">概率论</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">概率论与数理统计教程( 第三版 )习题与解答 (茆诗松, 程依明, 濮晓龙) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论与数理统计教程( 第三版 )习题与解答 (茆诗松, 程依明, 濮晓龙) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论与数理统计教程( 第三版 )习题与解答 (茆诗松, 程依明, 濮晓龙) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">README.md</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/README.md" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/README.md" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">概率论基础 第三版 (李贤平) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论基础 第三版 (李贤平) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论基础 第三版 (李贤平) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">概率论 第2版 (杨振明编, 杨振明编, 杨振明) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论 第2版 (杨振明编, 杨振明编, 杨振明) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论 第2版 (杨振明编, 杨振明编, 杨振明) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">概率论 (完整五章) 课后答案.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论 (完整五章) 课后答案.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/概率论/概率论 (完整五章) 课后答案.pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">复变函数</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">复变答案余家荣第五版.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变答案余家荣第五版.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变答案余家荣第五版.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">README.md</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/README.md" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/README.md" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">复变函数-史济怀 (史济怀  刘太顺（向禹重排）) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变函数-史济怀 (史济怀  刘太顺（向禹重排）) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变函数-史济怀 (史济怀  刘太顺（向禹重排）) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">简明复分析（第二版） (龚昇) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/简明复分析（第二版） (龚昇) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/简明复分析（第二版） (龚昇) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">复变函数论 (钟玉泉) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变函数论 (钟玉泉) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/复变函数/复变函数论 (钟玉泉) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">图论</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">图论及其应用 张先迪 课后答案[1-12章].pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/图论/图论及其应用 张先迪 课后答案[1-12章].pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/图论/图论及其应用 张先迪 课后答案[1-12章].pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">图论及其应用 (张先迪，李正良主编 etc.) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/图论/图论及其应用 (张先迪，李正良主编 etc.) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/图论/图论及其应用 (张先迪，李正良主编 etc.) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">数学分析</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">README.md</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数学分析/README.md" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数学分析/README.md" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">偏微分方程</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">答案：数学物理方程，谷超豪第四版.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/偏微分方程/答案：数学物理方程，谷超豪第四版.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/偏微分方程/答案：数学物理方程，谷超豪第四版.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">1数学物理方程 第三版 谷超豪 习题解答 齐海涛(1)_ (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/偏微分方程/1数学物理方程 第三版 谷超豪 习题解答 齐海涛(1)_ (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/偏微分方程/1数学物理方程 第三版 谷超豪 习题解答 齐海涛(1)_ (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">其他</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">周志华-机器学习-9787302423287.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/周志华-机器学习-9787302423287.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/周志华-机器学习-9787302423287.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">深度学习.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/深度学习.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/其他/深度学习.pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">高等代数</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">README.md</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/高等代数/README.md" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/高等代数/README.md" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">高等代数 辅导与习题解答 （第五版） (北京大学数学系_ (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/高等代数/高等代数 辅导与习题解答 （第五版） (北京大学数学系_ (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/高等代数/高等代数 辅导与习题解答 （第五版） (北京大学数学系_ (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">数理统计</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">概率论与数理统计 (陈希孺) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数理统计/概率论与数理统计 (陈希孺) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/数理统计/概率论与数理统计 (陈希孺) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">大学物理</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">普通物理学【蜂考系统课】.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学【蜂考系统课】.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学【蜂考系统课】.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">普通物理学（下册）练习册答案1_20220909194654.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学（下册）练习册答案1_20220909194654.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学（下册）练习册答案1_20220909194654.pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">普通物理学（上册）练习册答案.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学（上册）练习册答案.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/大学物理/普通物理学（上册）练习册答案.pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">点集拓扑</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">点集拓扑讲义, 第五版 (熊金城) (Z-Library).pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/点集拓扑/点集拓扑讲义, 第五版 (熊金城) (Z-Library).pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/点集拓扑/点集拓扑讲义, 第五版 (熊金城) (Z-Library).pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">LaTeX</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">Texstudio技巧与配置.pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/LaTeX/Texstudio技巧与配置.pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/LaTeX/Texstudio技巧与配置.pdf" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+<div class="folder">
+    <div class="folder-title">运筹学</div>
+    <ul class="file-list">
+      <li class="file-item">
+            <span class="file-name">运筹学基础及应用_第五版_胡运权_课后答案[1-8章].pdf</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/运筹学/运筹学基础及应用_第五版_胡运权_课后答案[1-8章].pdf" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/运筹学/运筹学基础及应用_第五版_胡运权_课后答案[1-8章].pdf" download class="action-link download">下载</a>
+        </li>
+      <li class="file-item">
+            <span class="file-name">README.md</span>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/运筹学/README.md" target="_blank" class="action-link preview">预览</a>
+            <a href="https://haodongcui.github.io/xju-math-fly/课程资料/运筹学/README.md" download class="action-link download">下载</a>
+        </li>
+    </ul>
+</div>
+    </div>
 </body>
 </html>
