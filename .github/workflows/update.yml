@@ -24,7 +24,7 @@ jobs:
       # 运行 Python 脚本
       - name: Run Python script
         run: |
-          python utils/update2.py
+          python update.py
 
       # 提交生成的 index.html 文件
       - name: Commit and push changes
