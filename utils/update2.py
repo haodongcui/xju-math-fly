@@ -61,7 +61,7 @@ def generate_index_html(folder_path, output_file, base_url=""):
 
 # 设置文件夹路径和输出文件名
 folder_path = '../课程资料/'
-output_file = './index.html'
+output_file = '../index.html'
 
 # 可选：设置文件的基础访问路径（例如本地服务器路径）
 # base_url = "./课程资料"
