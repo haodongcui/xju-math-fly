@@ -26,6 +26,21 @@ jobs:
         run: |
           python utils/update2.py
 
+      # 调试：列出工作目录中的文件
+      - name: Debug working directory
+        run: |
+          ls -la
+
+      # 调试：检查 index.html 的状态
+      - name: Debug Git status
+        run: |
+          git status
+
+      # 确保 index.html 文件被 Git 跟踪
+      - name: Track index.html
+        run: |
+          git add index.html || true
+
       # 提交生成的 index.html 文件
       - name: Commit and push changes
         env:
@@ -34,5 +49,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m "Automated update of index.html"
+          git commit --allow-empty -m "Automated update of index.html"
           git push "https://$GITHUB_ACTOR:$MY_PAT@github.com/$GITHUB_REPOSITORY.git"
