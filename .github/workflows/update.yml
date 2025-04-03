@@ -24,7 +24,7 @@ jobs:
       # 运行 Python 脚本
       - name: Run Python script
         run: |
-          python update.py
+          python utils/update.py
 
       # 提交生成的 index.html 文件
       - name: Commit and push changes
@@ -33,6 +33,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add .
           git commit --allow-empty -m "Automated update of index.html"
           git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
