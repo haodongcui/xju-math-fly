@@ -19,6 +19,27 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             --secondary-color: #3498db;
             --hover-color: #e74c3c;
             --nav-height: 60px;
+            --bg-color: #f8f9fa;
+            --text-color: #444;
+            --item-bg: white;
+            --border-color: #ddd;
+            --shadow-color: rgba(0,0,0,0.05);
+            --title-color: var(--primary-color);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #1a2634;
+                --secondary-color: #2980b9;
+                --hover-color: #c0392b;
+                --bg-color: #1a1a1a;
+                --text-color: #e0e0e0;
+                --item-bg: #2d2d2d;
+                --border-color: #404040;
+                --shadow-color: rgba(0,0,0,0.2);
+                --folder-title-color: #e0e0e0;
+                --title-color: #ffffff;
+            }
         }
 
         body {
@@ -26,7 +47,8 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             line-height: 1.6;
             margin: 0;
             padding-top: var(--nav-height);
-            background: #f8f9fa;
+            background: var(--bg-color);
+            color: var(--text-color);
         }
 
         .navbar {
@@ -94,7 +116,7 @@ def generate_resource_html(folder_path, output_file, base_url=""):
         }
 
         h1 {
-            color: var(--primary-color);
+            color: var(--title-color);
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 0.5em;
             margin-bottom: 1.5rem;
@@ -107,7 +129,7 @@ def generate_resource_html(folder_path, output_file, base_url=""):
         .folder {
             margin: 1rem 0;
             padding-left: 1.5rem;
-            border-left: 2px solid #ddd;
+            border-left: 2px solid var(--border-color);
             transition: all 0.3s;
         }
 
@@ -117,6 +139,12 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             cursor: pointer;
             position: relative;
             padding-left: 28px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .folder-title {
+                color: var(--folder-title-color);
+            }
         }
 
         .folder-title::before {
@@ -135,9 +163,9 @@ def generate_resource_html(folder_path, output_file, base_url=""):
         .file-item {
             margin: 0.5rem 0;
             padding: 6px 12px;
-            background: white;
+            background: var(--item-bg);
             border-radius: 4px;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 3px var(--shadow-color);
             display: flex;
             align-items: center;
             gap: 15px;
@@ -145,7 +173,7 @@ def generate_resource_html(folder_path, output_file, base_url=""):
 
         .file-name {
             flex-grow: 1;
-            color: #444;
+            color: var(--text-color);
             font-family: 'Consolas', monospace;
         }
 
