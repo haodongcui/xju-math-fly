@@ -1,6 +1,6 @@
 import os
 
-def generate_index_html(folder_path, output_file, base_url=""):
+def generate_resource_html(folder_path, output_file, base_url=""):
     """
     遍历指定文件夹，生成层次分明的HTML目录结构
     """
@@ -10,19 +10,87 @@ def generate_index_html(folder_path, output_file, base_url=""):
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程资料目录 - 结构化视图</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
             --hover-color: #e74c3c;
+            --nav-height: 60px;
         }
 
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
-            margin: 2rem;
+            margin: 0;
+            padding-top: var(--nav-height);
             background: #f8f9fa;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .github-icon {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+
+            .navbar-links {
+                gap: 1rem;
+            }
+
+            .navbar-links a span {
+                display: none;
+            }
+
+            .github-icon {
+                font-size: 1.2rem;
+            }
+        }
+
+        .content {
+            padding: 2rem;
         }
 
         h1 {
@@ -106,9 +174,17 @@ def generate_index_html(folder_path, output_file, base_url=""):
     </style>
 </head>
 <body>
-    <h1>📂 课程资料目录</h1> 
-    </div>
-    <div class="tree">\n''')
+    <nav class="navbar">
+        <a href="https://haodongcui.github.io/xju-math-fly/" class="navbar-brand">飞跃手册</a>
+        <div class="navbar-links">
+            <a href="https://haodongcui.github.io/xju-math-fly/survive"><span>生存手册</span></a>
+            <a href="https://haodongcui.github.io/xju-math-fly/resource"><span>课程资料</span></a>
+            <a href="https://github.com/haodongcui/xju-math-fly" class="github-icon"><i class="fab fa-github"></i></a>
+        </div>
+    </nav>
+    <div class="content">
+        <h1>📂 课程资料目录</h1>
+        <div class="tree">\n''')
 
         # 遍历文件夹结构
         for root, dirs, files in os.walk(folder_path):
@@ -138,12 +214,14 @@ def generate_index_html(folder_path, output_file, base_url=""):
         html_file.write('''    </div>
 </body>
 </html>''')
+        
+    print(f"✅ HTML文件已生成：{output_file}")
 
 # 配置参数
-folder_path = './课程资料/'
-output_file = './index.html'
-base_url = "https://haodongcui.github.io/xju-math-fly/课程资料"
+# folder_path = '../课程资料/'
+# output_file = '../dist/resource.html'
+# base_url = "https://haodongcui.github.io/xju-math-fly/课程资料"
 
 # 生成文件
-generate_index_html(folder_path, output_file, base_url)
-print(f"✅ HTML文件已生成：{output_file}")
+# generate_resource_html(folder_path, output_file, base_url)
+# print(f"✅ HTML文件已生成：{output_file}")
