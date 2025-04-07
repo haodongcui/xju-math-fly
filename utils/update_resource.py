@@ -93,24 +93,6 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             font-size: 1.5rem;
         }
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0 1rem;
-            }
-
-            .navbar-links {
-                gap: 1rem;
-            }
-
-            .navbar-links a span {
-                display: none;
-            }
-
-            .github-icon {
-                font-size: 1.2rem;
-            }
-        }
-
         .content {
             padding: 2rem;
         }
