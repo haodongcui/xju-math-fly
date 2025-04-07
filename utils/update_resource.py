@@ -11,7 +11,7 @@ def generate_resource_html(folder_path, output_file, base_url=""):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>课程资料目录 - 结构化视图</title>
+    <title>课程资料目录</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         :root {
@@ -268,16 +268,14 @@ def generate_resource_html(folder_path, output_file, base_url=""):
         <a href="https://haodongcui.github.io/xju-math-fly/" class="navbar-brand">飞跃手册</a>
         
         <div class="navbar-links">
-            <a href="https://haodongcui.github.io/xju-math-fly/survive"><span>生存手册</span></a>
-            <a href="https://haodongcui.github.io/xju-math-fly/resource"><span>课程资料</span></a>
+            <a href="https://haodongcui.github.io/xju-math-fly/"><span>课程资料</span></a>
             <a href="https://github.com/haodongcui/xju-math-fly" class="github-icon"><i class="fab fa-github"></i></a>
         </div>
 
         <div class="dropdown">
             <button class="dropbtn"><i class="fas fa-bars"></i></button>
             <div class="dropdown-content">
-                <a href="https://haodongcui.github.io/xju-math-fly/survive">生存手册</a>
-                <a href="https://haodongcui.github.io/xju-math-fly/resource">课程资料</a>
+                <a href="https://haodongcui.github.io/xju-math-fly/index">课程资料</a>
                 <a href="https://github.com/haodongcui/xju-math-fly"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
