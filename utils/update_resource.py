@@ -2,10 +2,10 @@ import os
 
 def generate_resource_html(folder_path, output_file, base_url=""):
     """
-    遍历指定文件夹，生成层次分明的HTML目录结构
+    遍历指定文件夹，生成包含响应式导航栏的HTML目录结构
     """
     with open(output_file, 'w', encoding='utf-8') as html_file:
-        # 增强的CSS样式
+        # 生成HTML头部和样式
         html_file.write('''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -93,6 +93,47 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             font-size: 1.5rem;
         }
 
+        .dropdown {
+            display: none;
+            position: relative;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: var(--primary-color);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .show {
+            display: block;
+        }
+
         .content {
             padding: 2rem;
         }
@@ -157,6 +198,8 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             flex-grow: 1;
             color: var(--text-color);
             font-family: 'Consolas', monospace;
+            overflow-wrap: anywhere;
+            word-break: break-word;
         }
 
         .action-link {
@@ -164,6 +207,7 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             padding: 4px 8px;
             border-radius: 3px;
             transition: all 0.2s;
+            font-size: 0.9em;
         }
 
         .action-link:hover {
@@ -181,17 +225,64 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             content: "👁️";
             margin-right: 5px;
         }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+            .navbar-links {
+                display: none;
+            }
+            .dropdown {
+                display: block;
+            }
+            .folder-title {
+                font-size: 1.1em;
+            }
+            .file-item {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 8px;
+            }
+            .file-name {
+                flex: 0 0 100%;
+                font-size: 0.95em;
+            }
+            .content {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .folder {
+                padding-left: 1rem;
+            }
+            .action-link {
+                padding: 3px 6px;
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <a href="https://haodongcui.github.io/xju-math-fly/" class="navbar-brand">飞跃手册</a>
+        
         <div class="navbar-links">
             <a href="https://haodongcui.github.io/xju-math-fly/survive"><span>生存手册</span></a>
             <a href="https://haodongcui.github.io/xju-math-fly/resource"><span>课程资料</span></a>
             <a href="https://github.com/haodongcui/xju-math-fly" class="github-icon"><i class="fab fa-github"></i></a>
         </div>
+
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-bars"></i></button>
+            <div class="dropdown-content">
+                <a href="https://haodongcui.github.io/xju-math-fly/survive">生存手册</a>
+                <a href="https://haodongcui.github.io/xju-math-fly/resource">课程资料</a>
+                <a href="https://github.com/haodongcui/xju-math-fly"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
     </nav>
+
     <div class="content">
         <h1>📂 课程资料目录</h1>
         <div class="tree">\n''')
@@ -220,18 +311,31 @@ def generate_resource_html(folder_path, output_file, base_url=""):
 
             html_file.write('    </ul>\n</div>\n')
 
-        # 闭合HTML结构
-        html_file.write('''    </div>
+        # 闭合HTML结构并添加脚本
+        html_file.write('''        </div>
+    </div>
+
+    <script>
+        document.querySelector('.dropbtn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.querySelector('.dropdown-content').classList.toggle('show');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelector('.dropdown-content').classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>''')
         
     print(f"✅ HTML文件已生成：{output_file}")
 
-# 配置参数
-# folder_path = '../课程资料/'
-# output_file = '../dist/resource.html'
-# base_url = "https://haodongcui.github.io/xju-math-fly/课程资料"
-
-# 生成文件
-# generate_resource_html(folder_path, output_file, base_url)
-# print(f"✅ HTML文件已生成：{output_file}")
+# 示例用法
+if __name__ == "__main__":
+    folder_path = '../课程资料/'        # 修改为实际路径
+    output_file = '../dist/resource.html' # 输出文件路径
+    base_url = "https://haodongcui.github.io/xju-math-fly/课程资料"  # 基础URL
+    
+    generate_resource_html(folder_path, output_file, base_url)
