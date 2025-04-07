@@ -12,5 +12,5 @@ generate_resource_html(resource_path, resource_html_path, base_url)
 
 # 复制resource.html为index.html
 source_path = 'docs/resource.html'
-target_path = 'docs/index.html'
+target_path = 'index.html'
 copy_and_rename(source_path, target_path)
