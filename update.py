@@ -10,6 +10,11 @@ resource_html_path = 'resource.html'
 base_url = "https://haodongcui.github.io/xju-math-fly/课程资料"
 generate_resource_html(resource_path, resource_html_path, base_url)
 
+resource_path = '课程资料'
+resource_html_path = 'index.html'
+base_url = "https://haodongcui.github.io/xju-math-fly/课程资料"
+generate_resource_html(resource_path, resource_html_path, base_url)
+
 # 复制resource.html为index.html
 source_path = 'resource.html'
 target_path = 'index.html'
