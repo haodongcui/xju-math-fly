@@ -269,6 +269,7 @@ def generate_resource_html(folder_path, output_file, base_url=""):
         
         <div class="navbar-links">
             <a href="https://haodongcui.github.io/xju-math-fly/"><span>课程资料</span></a>
+            <a href="https://github.com/haodongcui/xju-math-fly">上传资料</a>
             <a href="https://github.com/haodongcui/xju-math-fly" class="github-icon"><i class="fab fa-github"></i></a>
         </div>
 
@@ -276,7 +277,7 @@ def generate_resource_html(folder_path, output_file, base_url=""):
             <button class="dropbtn"><i class="fas fa-bars"></i></button>
             <div class="dropdown-content">
                 <a href="https://haodongcui.github.io/xju-math-fly/index">课程资料</a>
-                <a href="https://haodongcui.github.io/xju-math-fly/xju-math-fly">上传资料</a>
+                <a href="https://github.com/haodongcui/xju-math-fly">上传资料</a>
                 <a href="https://github.com/haodongcui/xju-math-fly"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
