@@ -1,0 +1,1 @@
+[李宏毅深度学习教程LeeDL-Tutorial（苹果书）](https://github.com/datawhalechina/leedl-tutorial/releases/download/v1.2.4/LeeDL_Tutorial_v.1.2.4.pdf)
